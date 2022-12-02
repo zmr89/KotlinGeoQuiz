@@ -26,14 +26,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var prevButton : ImageButton
     private lateinit var cheatButton : Button
     private lateinit var questionTextView : TextView
-    private lateinit var levelAPITextView : TextView
     private lateinit var cheatTextView : TextView
 
     private val quizViewModel: QuizViewModel by lazy {
         ViewModelProvider(this).get(QuizViewModel::class.java)
     }
 
-    @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate(Bundle?) called")
@@ -54,8 +52,6 @@ class MainActivity : AppCompatActivity() {
         cheatButton = findViewById(R.id.cheat_button)
         questionTextView = findViewById(R.id.question_text_view)
         cheatTextView= findViewById(R.id.cheatTextView)
-        levelAPITextView = findViewById(R.id.levelAPITextView)
-        levelAPITextView.setText("API level " + Build.VERSION.SDK_INT)
 
 
         trueButton.setOnClickListener { view : View ->
